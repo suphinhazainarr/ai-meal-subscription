@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root' // Provides this service at the root level
 })
 export class AuthService {
-  private apiUrl = 'https://your-backend-api.com/auth/signup'; // Replace with your actual API endpoint
+  private apiUrl = 'http://localhost:5000/api/auth/signup'; 
 
   constructor(private http: HttpClient) {}
 
