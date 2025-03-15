@@ -33,20 +33,38 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    // Input validation
+    if (!email || !password) {
+      return res.status(400).json({ message: "Email and password are required" });
+    }
+
     // Check if user exists
-    let user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: "Invalid Credentials" });
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
 
     // Compare password
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ message: "Invalid Credentials" });
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
 
     // Generate JWT
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
-    res.json({ token, user: { id: user._id, name: user.name, email: user.email } });
+    // Return token and user details (excluding sensitive data)
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Login error:", err.message);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 

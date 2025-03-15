@@ -1,1 +1,9 @@
-<p>login works!</p>
+<div class="login-container">
+  <h2>Login to Your Meal Plan</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input type="email" formControlName="email" placeholder="Email Address" required>
+    <input type="password" formControlName="password" placeholder="Password" required>
+    <input type="submit" value="Login" [disabled]="loginForm.invalid">
+  </form>
+  <p>Don't have an account? <a routerLink="/signup">Sign up here</a></p>
+</div>

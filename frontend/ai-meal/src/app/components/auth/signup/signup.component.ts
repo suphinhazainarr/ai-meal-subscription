@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';  // ✅ Import this
 
 @Component({
   selector: 'app-signup',
+  standalone:true,
   imports: [    ReactiveFormsModule  // ✅ Add this
   ],
   templateUrl: './signup.component.html',
@@ -43,7 +44,7 @@ export class SignupComponent {
           this.signupForm.reset();
   
           // 🚀 Navigate to HomeComponent after successful signup
-          this.router.navigate(['/home']);  
+          this.router.navigate(['/login']);  
         },
         error: (error: any) => {
           console.error('❌ Signup error:', error);

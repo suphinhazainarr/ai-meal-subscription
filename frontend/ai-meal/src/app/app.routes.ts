@@ -5,8 +5,12 @@ import { LoginComponent } from './components/auth/login/login.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
-
     { path: 'home', component: HomeComponent },
     { path: 'signup', component: SignupComponent },
-    { path: '', redirectTo: '/signup', pathMatch: 'full' }  // Default route
+    
+    // Default route: Redirect to login if no other route is matched
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+    // Wildcard route: Redirects unknown paths to login or 404 page
+    { path: '**', redirectTo: 'login' }  
 ];
