@@ -5,25 +5,61 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Ensure the HTML and body take up the full height of the viewport */
+html, body {
+    height: 100%;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to ensure it covers the full viewport height */
     background: linear-gradient(135deg, #141e30, #243b55);
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    padding: 20px;
+    background: #141e30; /* Fallback color */
+
+}
+
+/* Add a pseudo-element for the aesthetic background */
+/* body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(20, 30, 48, 0.8), rgba(36, 59, 85, 0.8));
+    z-index: -1;
+} */
+
+::ng-deep body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141e30;
+    z-index: -1;
 }
 
 .login-container {
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #141e30, #2c3e50);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    width: 450px; /* Full width on small screens */
+    max-width: 450px; /* Maximum width for larger screens */
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    margin: auto; /* Ensure the container is centered */
+    height: 500px;
+    position: relative; /* Ensure it stays above the background */
+    z-index: 1; /* Place it above the pseudo-element */
 }
 
 .login-container:hover {
@@ -32,7 +68,7 @@ body {
 
 .login-container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: hwb(0 97% 3%);
     font-weight: 600;
 }
 
@@ -68,7 +104,7 @@ body {
 
 .login-container p {
     margin-top: 15px;
-    color: #555;
+    color: #f5f4f4;
     font-size: 14px;
 }
 
@@ -81,4 +117,68 @@ body {
 
 .login-container a:hover {
     text-decoration: underline;
+}
+
+/* Validation Styles */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f5f1f1;
+    font-weight: 500;
+}
+
+.form-group input.ng-invalid.ng-touched {
+    border-color: #ff3860;
+}
+
+.form-group input.ng-valid.ng-touched {
+    border-color: #23d160;
+}
+
+.error-message {
+    color: #ff3860;
+    font-size: 0.875em;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Additional Styles for Invalid Fields */
+.login-container input.ng-invalid.ng-touched {
+    border-color: #ff3860;
+    background-color: #fff5f5;
+}
+
+.login-container input.ng-invalid.ng-touched:focus {
+    box-shadow: 0 0 8px rgba(255, 56, 96, 0.2);
+}
+
+/* Disabled Submit Button */
+.login-container input[type="submit"]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    .login-container h2 {
+        font-size: 1.5em; /* Reduce font size for smaller screens */
+    }
+
+    .login-container input {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+
+    .login-container input[type="submit"] {
+        font-size: 16px; /* Reduce font size for smaller screens */
+    }
 }

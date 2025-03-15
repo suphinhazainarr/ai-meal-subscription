@@ -1,9 +1,52 @@
 <div class="login-container">
   <h2>Login to Your Meal Plan</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <input type="email" formControlName="email" placeholder="Email Address" required>
-    <input type="password" formControlName="password" placeholder="Password" required>
+    <!-- Email Field -->
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email"
+        required
+      />
+      <!-- Validation Messages for Email -->
+      <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+        <small class="error-message" *ngIf="loginForm.get('email')?.errors?.['required']">
+          Email is required.
+        </small>
+        <small class="error-message" *ngIf="loginForm.get('email')?.errors?.['email']">
+          Please enter a valid email address.
+        </small>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+        required
+      />
+      <!-- Validation Messages for Password -->
+      <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+        <small class="error-message" *ngIf="loginForm.get('password')?.errors?.['required']">
+          Password is required.
+        </small>
+        <small class="error-message" *ngIf="loginForm.get('password')?.errors?.['minlength']">
+          Password must be at least 6 characters long.
+        </small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
     <input type="submit" value="Login" [disabled]="loginForm.invalid">
   </form>
+
+  <!-- Signup Link -->
   <p>Don't have an account? <a routerLink="/signup">Sign up here</a></p>
 </div>
