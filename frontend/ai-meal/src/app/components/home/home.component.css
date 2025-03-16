@@ -1,9 +1,9 @@
 /* Navbar Height and Alignment */
 .navbar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   height: 70px; /* Increase navbar height */
   display: flex;
   align-items: center; /* Vertically center content */
+  z-index: 1000; /* Ensure the navbar appears above other elements */
 }
 
 /* Centered Nav Links */
@@ -47,7 +47,7 @@
 @media (max-width: 991.98px) {
   .navbar-collapse {
     background-color: #141e30; /* Same as navbar background color */
-    padding: 1rem; /* Add padding for better spacing */
+    padding: 0 1rem; /* Add padding for better spacing (top and bottom padding removed) */
     margin-top: 0rem; /* Add margin for better spacing */
     position: absolute; /* Position the dropdown absolutely */
     top: 100%; /* Position it below the navbar */
@@ -56,12 +56,18 @@
     z-index: 1000; /* Ensure it appears above other content */
     max-height: 0; /* Start with max-height of 0 */
     overflow: hidden; /* Hide overflow content */
-    transition: max-height 0.5s ease-in-out; /* Smooth transition */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;    opacity: 0; /* Hide the element initially */
+    visibility: hidden; 
+    opacity: 0; /* Hide the element initially */
+    /* Ensure the element is not clickable */
   }
 
   /* Custom class for expanded state */
   .navbar-collapse.expanded {
     max-height: 500px; /* Adjust this value based on your content */
+    opacity: 1; /* Show the element */
+    visibility: visible; /* Make the element clickable */
+    padding: 1rem; /* Add padding when expanded */
   }
 
   .navbar-nav.mx-auto {
