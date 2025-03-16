@@ -1,0 +1,81 @@
+/* Navbar Height and Alignment */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 70px; /* Increase navbar height */
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+/* Centered Nav Links */
+.navbar-nav.mx-auto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Add more space between nav links */
+}
+
+/* Hover Effect for Nav Links */
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.75rem .5rem; /* Increase padding for nav links */
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Profile Icon Styling */
+.navbar-nav.ms-auto .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem; /* Add padding to ensure visibility */
+}
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #141e30; /* Same as navbar background color */
+    padding: 1rem; /* Add padding for better spacing */
+    margin-top: 0rem; /* Add margin for better spacing */
+    position: absolute; /* Position the dropdown absolutely */
+    top: 100%; /* Position it below the navbar */
+    left: 0; /* Align to the left edge */
+    right: 0; /* Align to the right edge */
+    z-index: 1000; /* Ensure it appears above other content */
+    max-height: 0; /* Start with max-height of 0 */
+    overflow: hidden; /* Hide overflow content */
+    transition: max-height 0.5s ease-in-out; /* Smooth transition */
+  }
+
+  /* Custom class for expanded state */
+  .navbar-collapse.expanded {
+    max-height: 500px; /* Adjust this value based on your content */
+  }
+
+  .navbar-nav.mx-auto {
+    gap: 0; /* Remove gap for mobile */
+    flex-direction: column; /* Stack nav links vertically */
+    align-items: flex-start; /* Align nav links to the left */
+  }
+
+  .navbar-nav.ms-auto {
+    margin-top: 1rem; /* Add margin for better spacing */
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0; /* Adjust padding for mobile */
+    color: white !important; /* Ensure text color is white */
+  }
+}
