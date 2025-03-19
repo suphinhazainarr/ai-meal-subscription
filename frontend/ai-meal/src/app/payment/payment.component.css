@@ -1,0 +1,81 @@
+/* Custom Styles */
+.payment-container {
+  max-width: 600px; /* Increased for laptop screens */
+  margin: auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.back-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.payment-details {
+  font-size: 14px;
+}
+
+.option {
+  cursor: pointer;
+}
+
+.view-all {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  .payment-container {
+    max-width: 800px; /* Adjusted for tablets and laptops */
+  }
+
+  .payment-header {
+    padding: 20px;
+  }
+
+  .payment-details {
+    padding: 20px;
+  }
+
+  .payment-options {
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 18px; /* Larger font size for headings */
+  }
+
+  .option {
+    padding: 15px; /* More padding for larger screens */
+  }
+
+  .upi-apps img {
+    width: 50px; /* Larger icons for UPI apps */
+    height: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .payment-container {
+    max-width: 1000px; /* Adjusted for larger laptop screens */
+  }
+
+  .payment-header h2 {
+    font-size: 24px; /* Larger header text */
+  }
+
+  .payment-details {
+    font-size: 16px; /* Larger font size for details */
+  }
+
+  .option {
+    padding: 20px; /* Even more padding for larger screens */
+  }
+}

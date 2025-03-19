@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PaymentComponent } from './payment/payment.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -16,10 +17,12 @@ export const routes: Routes = [
         ]
     },
     { path: 'signup', component: SignupComponent },
-    
+    { path: 'payment', component: PaymentComponent },
+
     // Default route: Redirect to login if no other route is matched
     { path: '', redirectTo: 'login', pathMatch: 'full' },
 
     // Wildcard route: Redirects unknown paths to login or 404 page
-    { path: '**', redirectTo: 'login' }  
+    { path: '**', redirectTo: 'login' }  ,
+
 ];

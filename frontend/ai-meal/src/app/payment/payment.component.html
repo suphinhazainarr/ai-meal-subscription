@@ -1,0 +1,62 @@
+<div class="container-fluid payment-container p-0">
+  <!-- Header Section -->
+  <header class="payment-header bg-danger text-white p-3 d-flex align-items-center" style="background-color: #141e30;">    <button class="back-btn btn btn-link text-white p-0">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h2 class="mb-0 ml-2">Payment Methods</h2>
+  </header>
+
+  <!-- Payment Details Section -->
+  <div class="payment-details bg-white p-3 d-flex justify-content-between">
+    <div class="plan-info">
+      <span class="text-muted">Plan type</span>
+      <strong class="d-block">HealthifySmart</strong>
+    </div>
+    <div class="amount-info">
+      <span class="text-muted">Amount</span>
+      <strong class="d-block">&#8377;1,899</strong>
+    </div>
+  </div>
+
+  <!-- Payment Options Section -->
+  <section class="payment-options p-3">
+    <!-- Cards Option -->
+    <h3 class="mt-3">Cards</h3>
+    <div class="option bg-white p-3 d-flex align-items-center justify-content-between rounded shadow-sm" (click)="proceedToPayment()">
+      <div class="d-flex align-items-center">
+        <i class="bi bi-credit-card" style="border: 2px solid #00000095; border-radius: 5px; padding: 5px; margin-right: 5px;"></i>        <!-- <img src="assets/card-icon.png" alt="Card Icon" class="mr-3" style="width: 30px; height: 30px;" /> -->
+        <span>Credit / Debit Cards</span>
+      </div>
+      <span class="arrow">&#x25B6;</span>
+    </div>
+
+    <!-- UPI Option -->
+    <h3 class="mt-4">UPI</h3>
+    <div class="option bg-white p-3 d-flex align-items-center justify-content-between rounded shadow-sm">
+      <div class="d-flex align-items-center">
+        <img src="assets/images/upilogo.png"  alt="UPI Icon" class="mr-3" style="width: 39px; height: 37px; border: 2px solid #00000095; border-radius: 5px; padding: 5px; margin-right: 5px;" />
+        <div>
+          <strong>Pay by Any UPI app</strong>
+          <p class="text-muted mb-0">Use any UPI app on your phone to pay</p>
+        </div>
+      </div>
+      <input type="radio" name="upi-method" />
+    </div>
+
+    <!-- UPI Apps Section -->
+    <div class="upi-apps d-flex align-items-center justify-content-around mt-3">
+      <img src="assets\images\icons8-google-pay-new-48.png" alt="GPay" class="img-fluid" style="width: 40px; height: 40px;" />
+      <img src="assets/images/icons8-paytm-48.png" alt="PhonePe" class="img-fluid" style="width: 40px; height: 40px;" />
+      <span class="view-all text-danger">View all</span>
+    </div>
+
+    <!-- Autopay Option -->
+    <div class="option bg-white p-3 d-flex align-items-center justify-content-between rounded shadow-sm mt-3">
+      <div class="d-flex align-items-center">
+        <img src="assets/images/auto-pay.png" style="height: 39px; width: 39px;" alt="Autopay Icon" class="mr-3" style="width: 30px; height: 30px;" />
+        <span>Autopay using UPI ID</span>
+      </div>
+      <span class="arrow">&#x25B6;</span>
+    </div>
+  </section>
+</div>
