@@ -26,18 +26,24 @@ export class PaymentComponent {
           description: 'Payment for your plan',
           image: 'assets/logo.png', // Add your logo
           handler: (response: any) => {
-            alert('Payment Successful! Payment ID: ' + response.razorpay_payment_id);
-            // Call your backend to verify the payment
-            this.verifyPayment(response);
+            // Verify the payment only if the payment ID is present
+            if (response.razorpay_payment_id) {
+              alert('Payment Successful! Payment ID: ' + response.razorpay_payment_id);
+              this.verifyPayment(response);
+            } else {
+              alert('Payment failed or was not completed.');
+            }
           },
           prefill: {
             name: 'John Doe', // Prefill customer name
-            email: 'johndoe@example.com', // Prefill customer email
-            contact: '9999999999' // Prefill customer phone number
+            email: 'suphinhassainar2004@example.com', // Prefill customer email
+            contact: '9567303565' // Prefill customer phone number
           },
           theme: {
             color: '#d32f2f' // Customize the checkout theme
-          }
+          },
+           // UPI-specific configurations
+      
         };
 
         const rzp = new Razorpay(options);
@@ -65,5 +71,7 @@ export class PaymentComponent {
       }
     );
   }
+
+  
 
 }

@@ -12,21 +12,30 @@ const razorpay = new Razorpay({
 
 // Create a Razorpay order
 router.post("/create-order", async (req, res) => {
-  const { amount } = req.body;
-
-  const options = {
-    amount: amount, // Amount in paise
-    currency: "INR",
-    receipt: "order_receipt_" + Math.floor(Math.random() * 1000),
-  };
-
-  try {
-    const order = await razorpay.orders.create(options);
-    res.json(order);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+    const { amount } = req.body;
+  
+    // Validate request data
+    if (!amount) {
+      return res.status(400).json({ error: "Amount is required" });
+    }
+  
+    const options = {
+      amount: amount, // Amount in paise
+      currency: "INR",
+      receipt: "order_receipt_" + Math.floor(Math.random() * 1000),
+    };
+  
+    try {
+      const order = await razorpay.orders.create(options);
+      res.json(order);
+    } catch (error) {
+      console.error("Error creating Razorpay order:", error);
+      res.status(500).json({ 
+        error: "Failed to create order",
+        details: error.message || "Unknown error" 
+      });
+    }
+  });
 
 // Verify Razorpay payment
 router.post("/verify-payment", (req, res) => {

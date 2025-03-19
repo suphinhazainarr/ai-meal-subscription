@@ -22,7 +22,7 @@
   <section class="payment-options p-3">
     <!-- Cards Option -->
     <h3 class="mt-3">Cards</h3>
-    <div class="option bg-white p-3 d-flex align-items-center justify-content-between rounded shadow-sm" (click)="proceedToPayment()">
+    <div class="option bg-white p-3 d-flex align-items-center justify-content-between rounded shadow-sm" >
       <div class="d-flex align-items-center">
         <i class="bi bi-credit-card" style="border: 2px solid #00000095; border-radius: 5px; padding: 5px; margin-right: 5px;"></i>        <!-- <img src="assets/card-icon.png" alt="Card Icon" class="mr-3" style="width: 30px; height: 30px;" /> -->
         <span>Credit / Debit Cards</span>
@@ -32,7 +32,7 @@
 
     <!-- UPI Option -->
     <h3 class="mt-4">UPI</h3>
-    <div class="option bg-white p-3 d-flex align-items-center justify-content-between rounded shadow-sm">
+    <div class="option bg-white p-3 d-flex align-items-center justify-content-between rounded shadow-sm" (click)="proceedToPayment()">
       <div class="d-flex align-items-center">
         <img src="assets/images/upilogo.png"  alt="UPI Icon" class="mr-3" style="width: 39px; height: 37px; border: 2px solid #00000095; border-radius: 5px; padding: 5px; margin-right: 5px;" />
         <div>
@@ -45,7 +45,7 @@
 
     <!-- UPI Apps Section -->
     <div class="upi-apps d-flex align-items-center justify-content-around mt-3">
-      <img src="assets\images\icons8-google-pay-new-48.png" alt="GPay" class="img-fluid" style="width: 40px; height: 40px;" />
+      <img src="assets\images\icons8-google-pay-new-48.png" alt="GPay"  class="img-fluid" style="width: 40px; height: 40px;" />
       <img src="assets/images/icons8-paytm-48.png" alt="PhonePe" class="img-fluid" style="width: 40px; height: 40px;" />
       <span class="view-all text-danger">View all</span>
     </div>
