@@ -11,9 +11,11 @@ app.use(cors());
 
 // Import routes
 const authRoutes = require("./routes/auth");
+const paymentRoutes = require("./routes/payment"); // Import payment routes
 
 // Use routes
 app.use("/api/auth", authRoutes);
+app.use("/api/payment", paymentRoutes); // Use payment routes
 
 // Connect to MongoDB
 mongoose

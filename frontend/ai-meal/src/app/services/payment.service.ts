@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PaymentService {
 
-  private apiUrl = 'http://localhost:3000'; // Replace with your backend API URL
+  private apiUrl = 'http://localhost:5000/api/payment'; // Match the backend route prefix
 
   constructor(private http: HttpClient) {}
 
