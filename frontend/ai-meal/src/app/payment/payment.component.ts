@@ -15,6 +15,8 @@ export class PaymentComponent {
   constructor(private paymentService: PaymentService) {}
 
   proceedToPayment() {
+    const userData = JSON.parse(localStorage.getItem('user') || '{}'); // Retrieve user data from localStorage
+
     this.paymentService.createOrder(this.amount).subscribe(
       (order: any) => {
         const options = {
@@ -22,7 +24,7 @@ export class PaymentComponent {
           amount: order.amount, // Amount in paise
           currency: 'INR',
           order_id: order.id, // Use the order ID from the backend
-          name: 'HealthifySmart',
+          name: 'ai meal subscription',
           description: 'Payment for your plan',
           image: 'assets/logo.png', // Add your logo
           handler: (response: any) => {
@@ -35,8 +37,8 @@ export class PaymentComponent {
             }
           },
           prefill: {
-            name: 'John Doe', // Prefill customer name
-            email: 'suphinhassainar2004@example.com', // Prefill customer email
+            name: userData.name, // Prefill customer name
+            email: userData.email, // Prefill customer email
             contact: '9567303565' // Prefill customer phone number
           },
           theme: {
@@ -57,10 +59,25 @@ export class PaymentComponent {
   }
 
   verifyPayment(response: any) {
-    this.paymentService.verifyPayment(response).subscribe(
+    const userData = JSON.parse(localStorage.getItem('user') || '{}'); // Retrieve user data from localStorage
+  
+    if (!userData.email || !userData.name) {
+      alert('User details not found!');
+      return;
+    }
+  
+    const paymentData = {
+      razorpay_payment_id: response.razorpay_payment_id,
+      razorpay_order_id: response.razorpay_order_id,
+      razorpay_signature: response.razorpay_signature,
+      email: userData.email,  
+      name: userData.name,    
+    };
+  
+    this.paymentService.verifyPayment(paymentData).subscribe(
       (result: any) => {
         if (result.success) {
-          alert('Payment verified successfully!');
+          alert('Payment verified successfully! Subscription activated.');
         } else {
           alert('Payment verification failed.');
         }
