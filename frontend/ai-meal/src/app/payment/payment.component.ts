@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PaymentService } from '../services/payment.service';
+import { Router } from '@angular/router';
 declare var Razorpay: any; // Declare Razorpay to avoid TypeScript errors
 
 @Component({
@@ -12,7 +13,8 @@ declare var Razorpay: any; // Declare Razorpay to avoid TypeScript errors
 export class PaymentComponent {
   amount = 189900; // Amount in paise (1899 INR)
 
-  constructor(private paymentService: PaymentService) {}
+  constructor(private paymentService: PaymentService,  private router: Router // Inject Router
+  ) {}
 
   proceedToPayment() {
     const userData = JSON.parse(localStorage.getItem('user') || '{}'); // Retrieve user data from localStorage
@@ -78,6 +80,8 @@ export class PaymentComponent {
       (result: any) => {
         if (result.success) {
           alert('Payment verified successfully! Subscription activated.');
+          this.router.navigate(['/subscription-home']); // Update with your actual route
+
         } else {
           alert('Payment verification failed.');
         }

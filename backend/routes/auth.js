@@ -68,4 +68,33 @@ router.post("/login", async (req, res) => {
   }
 });
 
+
+// routes/auth.js (temporary solution without middleware)
+router.get('/me', async (req, res) => {
+  try {
+    // Temporary: Get user ID from query params (for testing only)
+    const userId = req.query.userId;
+    
+    if (!userId) {
+      return res.status(400).json({ message: 'User ID required' });
+    }
+
+    const user = await User.findById(userId)
+      .select('-password')
+      .lean();
+      
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      subscription: user.subscription || false
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
 module.exports = router;

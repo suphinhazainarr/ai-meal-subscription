@@ -17,6 +17,7 @@ const paymentRoutes = require("./routes/payment"); // Import payment routes
 app.use("/api/auth", authRoutes);
 app.use("/api/payment", paymentRoutes); // Use payment routes
 
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI) // No need for options
