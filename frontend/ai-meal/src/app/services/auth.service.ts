@@ -71,7 +71,7 @@ getCurrentUser(): Observable<any> {
 }
 
 isLoggedIn(): boolean {
-  return !!localStorage.getItem('token');
+  return !!localStorage.getItem('user');
 }
   // Signup method
   signup(userData: any): Observable<any> {

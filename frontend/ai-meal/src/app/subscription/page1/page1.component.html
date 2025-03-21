@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Meals - Personalized Nutrition Plans</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #dacfc5;
+            --secondary-color: #e0d4c9;
+            --accent-color: #a18e7a;
+            --text-color: #3a3530;
+            --light-text: #5a5550;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--light-text);
+        }
+
+        .category-card {
+            background-color: var(--primary-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-image {
+            height: 200px;
+            width: 100%;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+        }
+
+        .category-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-content p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .btn-custom:hover {
+            background-color: #8a7964;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-right: 1.5rem;
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .category-image {
+                height: 150px;
+                font-size: 1.2rem;
+            }
+
+            .category-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .category-content p {
+                font-size: 0.8rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                margin: 1rem 0;
+            }
+
+            .footer-links li {
+                margin: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .category-image {
+                height: 120px;
+                font-size: 1rem;
+            }
+
+            .category-content h3 {
+                font-size: 1rem;
+            }
+
+            .category-content p {
+                font-size: 0.75rem;
+            }
+
+            .btn-custom {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="py-4">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="logo">AI-<span>Meals</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Personalized Meal Plans<br>Powered by AI</h1>
+            <p class="lead mb-4">Get customized nutrition plans tailored to your specific goals, dietary preferences, and lifestyle with our advanced AI technology.</p>
+            <a href="#categories" class="btn btn-custom">Select Your Goal</a>
+        </div>
+    </section>
+
+    <section id="categories" class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <div class="category-image">Weight Gain</div>
+                    <div class="category-content">
+                        <h3>Weight Gain</h3>
+                        <p>Healthy meal plans designed to help you gain weight and build muscle mass in a nutritious way.</p>
+                        <button class="btn btn-custom">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <div class="category-image">Weight Loss</div>
+                    <div class="category-content">
+                        <h3>Weight Loss</h3>
+                        <p>Balanced meal plans focused on helping you achieve sustainable weight loss while staying satisfied.</p>
+                        <button class="btn btn-custom">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <div class="category-image">Maintain Weight</div>
+                    <div class="category-content">
+                        <h3>Maintain Weight</h3>
+                        <p>Perfect meal plans for those looking to maintain their current weight while optimizing nutrition.</p>
+                        <button class="btn btn-custom">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <div class="category-image">Athletes</div>
+                    <div class="category-content">
+                        <h3>Athletes</h3>
+                        <p>Performance-focused meal plans designed to fuel your workouts and support recovery.</p>
+                        <button class="btn btn-custom">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="logo">AI-<span>Meals</span></div>
+                <ul class="footer-links d-flex">
+                    <li><a href="#" class="me-3">Privacy Policy</a></li>
+                    <li><a href="#" class="me-3">Terms of Service</a></li>
+                    <li><a href="#" class="me-3">FAQ</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="copyright text-center mt-3">
+                &copy; 2025 AI-Meals. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

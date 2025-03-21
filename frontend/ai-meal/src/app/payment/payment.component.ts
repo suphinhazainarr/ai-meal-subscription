@@ -80,10 +80,13 @@ export class PaymentComponent {
       (result: any) => {
         if (result.success) {
           alert('Payment verified successfully! Subscription activated.');
-          this.router.navigate(['/subscription-home']); // Update with your actual route
-
+          this.router.navigate(['/subscription-home']).then(() => {
+            window.location.reload(); // Reload the page
+          });
         } else {
           alert('Payment verification failed.');
+          this.router.navigate(['/subscription-home']); // Update with your actual route
+
         }
       },
       (error: any) => {
