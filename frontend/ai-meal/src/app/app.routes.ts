@@ -8,6 +8,7 @@ import { SubscriptionHomeComponent } from './subscription/subscription-home/subs
 import { authGuard } from './guards/auth.guard';
 import { Page1Component } from './subscription/page1/page1.component';
 import { CityComponent } from './subscription/city/city.component';
+import { SubscriptionComponent } from './subscription/subscription/subscription.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -26,6 +27,12 @@ export const routes: Routes = [
     { path: 'payment', component: PaymentComponent },
     { path: 'page1', component: Page1Component },
     { path: 'page2', component: CityComponent },
+    { path: 'subscription', component: SubscriptionComponent ,
+        children: [
+            { path: 'page2', component: CityComponent },
+
+        ]
+    },
 
 
     { 

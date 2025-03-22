@@ -1,0 +1,12 @@
+<div class="subscription-container">
+    <div class="subscription-content">
+      <!-- Child components will be rendered here -->
+      <router-outlet></router-outlet>
+  
+      <!-- Navigation buttons -->
+      <div class="navigation-buttons">
+        <button *ngIf="showBackButton()" (click)="navigateBack()" class="btn btn-back">Back</button>
+        <button *ngIf="showNextButton()" (click)="navigateNext()" class="btn btn-next">Next</button>
+      </div>
+    </div>
+  </div>
