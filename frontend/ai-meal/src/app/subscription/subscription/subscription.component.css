@@ -11,7 +11,7 @@
   .subscription-content {
     width: 400px; /* Slightly larger than mobile screen width */
     padding: 20px;
-    background-color: white;
+    background-color: #e5c3a4;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
@@ -19,32 +19,35 @@
   /* Style the navigation buttons */
   .navigation-buttons {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .pagination-dots {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color:rgb(28, 26, 26);
   }
   
   .btn {
-    padding: 10px 20px;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
+    font-size: 24px;
     cursor: pointer;
-    font-size: 14px;
   }
   
-  .btn-next {
-    background-color: #007bff; /* Blue color for Next button */
-    color: white;
-  }
-  
-  .btn-back {
-    background-color: #6c757d; /* Gray color for Back button */
-    color: white;
-  }
-  
-  .btn-next:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  .btn-back:hover {
-    background-color: #5a6268; /* Darker gray on hover */
+  .btn-back, .btn-next {
+    color: rgb(51, 49, 49);
   }

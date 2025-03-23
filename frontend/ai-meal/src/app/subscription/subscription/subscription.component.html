@@ -3,10 +3,19 @@
       <!-- Child components will be rendered here -->
       <router-outlet></router-outlet>
   
-      <!-- Navigation buttons -->
+      <!-- Navigation buttons with arrow keys and pagination dots -->
       <div class="navigation-buttons">
-        <button *ngIf="showBackButton()" (click)="navigateBack()" class="btn btn-back">Back</button>
-        <button *ngIf="showNextButton()" (click)="navigateNext()" class="btn btn-next">Next</button>
+        <button *ngIf="showBackButton()" (click)="navigateBack()" class="btn btn-back">&#8592;</button>
+        
+        <!-- Pagination dots -->
+        <div class="pagination-dots">
+          <span *ngFor="let route of routeOrder; let i = index" 
+                [class.active]="i === currentRouteIndex" 
+                class="dot">
+          </span>
+        </div>
+  
+        <button *ngIf="showNextButton()" (click)="navigateNext()" class="btn btn-next">&#8594;</button>
       </div>
     </div>
   </div>

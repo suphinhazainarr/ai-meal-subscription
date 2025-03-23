@@ -10,8 +10,8 @@ import { Router, ActivatedRoute, RouterOutlet } from '@angular/router';
 })
 export class SubscriptionComponent {
   // Define the order of child routes
-  private routeOrder = ['page2', 'location', 'weight', 'height'];
-  private currentRouteIndex = 0;
+  public  routeOrder = ['page2', 'age', 'weight', 'height'];
+  public  currentRouteIndex = 0;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 

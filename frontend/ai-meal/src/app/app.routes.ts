@@ -9,6 +9,7 @@ import { authGuard } from './guards/auth.guard';
 import { Page1Component } from './subscription/page1/page1.component';
 import { CityComponent } from './subscription/city/city.component';
 import { SubscriptionComponent } from './subscription/subscription/subscription.component';
+import { AgeComponent } from './subscription/age/age.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -30,6 +31,7 @@ export const routes: Routes = [
     { path: 'subscription', component: SubscriptionComponent ,
         children: [
             { path: 'page2', component: CityComponent },
+            { path: 'age', component: AgeComponent }, // Add this line
 
         ]
     },

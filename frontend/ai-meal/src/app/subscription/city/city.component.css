@@ -1,11 +1,11 @@
 body {
-    background-color: #E0D4C9; /* Light beige background for the body */
-  }
-  
-  .container {
-    background-color: #e5c3a4; /* Slightly darker beige for the container */
-  }
-  
-  .alert {
-    background-color: #d29e6c;
-  }
+  background-color: #E0D4C9; /* Light beige background for the body */
+}
+
+.container {
+  background-color: #e5c3a4; /* Slightly darker beige for the container */
+}
+
+.alert {
+  background-color: #d29e6c;
+}

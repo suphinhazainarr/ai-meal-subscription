@@ -1,0 +1,29 @@
+
+body {
+    background-color: #E0D4C9 !important;
+  }
+  
+  .container {
+    background-color: #e5c3a4 !important;
+  }
+  
+  .age-btn {
+    background-color: #e5c3a4 !important;
+    border-color: #A89B8C !important;
+    color: #5a4a3f !important;
+  }
+  
+  .age-btn:hover,
+  .age-btn.active {
+    background-color: #A89B8C !important;
+    color: white !important;
+  }
+  
+  .submit-btn {
+    background-color: #5a4a3f !important;
+    color: white !important;
+  }
+  
+  .submit-btn:hover {
+    background-color: #483C33 !important;
+  }
