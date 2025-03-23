@@ -12,6 +12,7 @@ import { SubscriptionComponent } from './subscription/subscription/subscription.
 import { AgeComponent } from './subscription/age/age.component';
 import { WeightComponent } from './subscription/weight/weight.component';
 import { HeightComponent } from './subscription/height/height.component';
+import { SexComponent } from './subscription/sex/sex.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -39,7 +40,8 @@ export const routes: Routes = [
             { path: 'weight', component: WeightComponent
                 
              }, // Add this line
-            { path: 'height', component: HeightComponent }, // Add this line
+             { path: 'height', component: HeightComponent }, // Add this line
+             { path: 'sex', component: SexComponent }, // Add this line
 
 
         ]

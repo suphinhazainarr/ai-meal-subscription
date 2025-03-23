@@ -1,0 +1,66 @@
+body {
+    background-color: #e5c3a4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background-color: #e5c3a4;
+    border-radius: 12px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    height: 500px; /* Set height to 500px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .form-group {
+    margin-bottom: 35px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.5);
+  }
+  
+  .radio-option label {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  
+  button {
+    background-color: #6B5B4C;
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #5A4A3C;
+  }
