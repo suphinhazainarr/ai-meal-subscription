@@ -26,6 +26,8 @@ export const routes: Routes = [
             { path: 'dashboard', component: DashboardComponent } // Dashboard as a child of Home
         ]
     },
+    { path: 'height', component: HeightComponent }, // Add this line
+
     { path: 'signup', component: SignupComponent },
     { path: 'payment', component: PaymentComponent },
     { path: 'page1', component: Page1Component },

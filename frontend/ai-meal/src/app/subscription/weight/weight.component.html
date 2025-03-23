@@ -1,1 +1,35 @@
-<p>weight works!</p>
+<div class="container">
+    <header class="text-center">
+      <h1 class="h4">Select your weight</h1>
+      <!-- <p class="subtitle text-muted">Select your weight</p> -->
+    </header>
+  
+    <div classses of the element. Classes allows CSS and JavaScript to select and access specific element="weight-selector-container text-center">
+      <div class="weight-display">
+        <span id="selectedWeight">{{ selectedWeight }}</span>
+        <span class="weight-unit">kg</span>
+      </div>
+  
+      <div class="d-flex justify-content-between align-items-center weight-controls mx-auto" style="max-width: 300px;">
+        <button class="weight-control-btn" (click)="decrementWeight()">-</button>
+        <button class="weight-control-btn" (click)="incrementWeight()">+</button>
+      </div>
+  
+      <div class="weight-selector mx-auto" id="weightSelector">
+        <div class="selector-overlay"></div>
+        <div class="weight-options" id="weightOptions">
+          <div *ngFor="let weight of weightOptions" 
+               class="weight-option" 
+               [class.selected]="weight === selectedWeight" 
+               (click)="selectWeight(weight)">
+            {{ weight }}
+          </div>
+        </div>
+      </div>
+  
+      <!-- <div class="d-flex justify-content-between navigation mt-3">
+        <button class="btn btn-custom" (click)="onBack()">Back</button>
+        <button class="btn btn-custom" (click)="onNext()">Next</button>
+      </div> -->
+    </div>
+  </div>
