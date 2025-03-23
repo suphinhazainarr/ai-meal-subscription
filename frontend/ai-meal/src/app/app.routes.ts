@@ -13,6 +13,8 @@ import { AgeComponent } from './subscription/age/age.component';
 import { WeightComponent } from './subscription/weight/weight.component';
 import { HeightComponent } from './subscription/height/height.component';
 import { SexComponent } from './subscription/sex/sex.component';
+import { HealthInfoComponent } from './subscription/health-info/health-info.component';
+import { FoodAllergiesComponent } from './subscription/food-allergies/food-allergies.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -42,6 +44,8 @@ export const routes: Routes = [
              }, // Add this line
              { path: 'height', component: HeightComponent }, // Add this line
              { path: 'sex', component: SexComponent }, // Add this line
+             { path: 'health-info', component: HealthInfoComponent }, // Add this line
+             { path: 'food-alergies', component: FoodAllergiesComponent }, // Add this line
 
 
         ]

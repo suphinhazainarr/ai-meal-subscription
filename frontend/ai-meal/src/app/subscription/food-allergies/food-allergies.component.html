@@ -1,0 +1,43 @@
+<div class="container">
+    <h4>Food Allergies</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dairy" name="allergy" [(ngModel)]="allergies.dairy">
+          <label class="form-check-label" for="dairy">Dairy</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="eggs" name="allergy" [(ngModel)]="allergies.eggs">
+          <label class="form-check-label" for="eggs">Eggs</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="peanuts" name="allergy" [(ngModel)]="allergies.peanuts">
+          <label class="form-check-label" for="peanuts">Peanuts</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="tree-nuts" name="allergy" [(ngModel)]="allergies.treeNuts">
+          <label class="form-check-label" for="tree-nuts">Tree Nuts</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="shellfish" name="allergy" [(ngModel)]="allergies.shellfish">
+          <label class="form-check-label" for="shellfish">Shellfish</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="fish" name="allergy" [(ngModel)]="allergies.fish">
+          <label class="form-check-label" for="fish">Fish</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="wheat" name="allergy" [(ngModel)]="allergies.wheat">
+          <label class="form-check-label" for="wheat">Wheat</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="soy" name="allergy" [(ngModel)]="allergies.soy">
+          <label class="form-check-label" for="soy">Soy</label>
+        </div>
+      </div>
+    </div>
+    <label class="textarea-label">Other allergies:</label>
+    <textarea class="form-control" placeholder="Please list any other food allergies not mentioned above..." [(ngModel)]="otherAllergies"></textarea>
+  </div>

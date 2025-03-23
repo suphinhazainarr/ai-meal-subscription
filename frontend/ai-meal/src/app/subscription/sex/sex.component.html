@@ -1,14 +1,21 @@
 <div class="container">
-    <div class="form-group">
-      <label for="biologicalSex">Biological Sex (for nutritional calculations):</label>
+    <div class="form-group text-center">
+      <h2 class="form-title">Biological Sex</h2>
+      <p class="form-subtitle">Select your biological sex for nutritional calculations</p>
       <div class="radio-group">
         <div class="radio-option">
           <input type="radio" id="male" name="biologicalSex" value="male" [(ngModel)]="selectedSex">
-          <label for="male">Male</label>
+          <label for="male" class="radio-label">
+            <span class="radio-icon">♂</span>
+            <span class="radio-text">Male</span>
+          </label>
         </div>
         <div class="radio-option">
           <input type="radio" id="female" name="biologicalSex" value="female" [(ngModel)]="selectedSex">
-          <label for="female">Female</label>
+          <label for="female" class="radio-label">
+            <span class="radio-icon">♀</span>
+            <span class="radio-text">Female</span>
+          </label>
         </div>
       </div>
     </div>
