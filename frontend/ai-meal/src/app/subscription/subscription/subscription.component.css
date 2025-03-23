@@ -9,7 +9,8 @@
   
   /* Set a fixed width for the subscription content */
   .subscription-content {
-    width: 400px; /* Slightly larger than mobile screen width */
+    width: 400px;
+    height: 600px; /* Slightly larger than mobile screen width */
     padding: 20px;
     background-color: #e5c3a4;
     border-radius: 10px;

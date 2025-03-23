@@ -3,7 +3,8 @@ body {
 }
 
 .container {
-  background-color: #e5c3a4; /* Slightly darker beige for the container */
+  background-color: #e5c3a4;
+  height: 500px; /* Slightly darker beige for the container */
 }
 
 .alert {

@@ -10,6 +10,8 @@ import { Page1Component } from './subscription/page1/page1.component';
 import { CityComponent } from './subscription/city/city.component';
 import { SubscriptionComponent } from './subscription/subscription/subscription.component';
 import { AgeComponent } from './subscription/age/age.component';
+import { WeightComponent } from './subscription/weight/weight.component';
+import { HeightComponent } from './subscription/height/height.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -31,7 +33,12 @@ export const routes: Routes = [
     { path: 'subscription', component: SubscriptionComponent ,
         children: [
             { path: 'page2', component: CityComponent },
-            { path: 'age', component: AgeComponent }, // Add this line
+            { path: 'age', component: AgeComponent }, 
+            { path: 'weight', component: WeightComponent
+                
+             }, // Add this line
+            { path: 'height', component: HeightComponent }, // Add this line
+
 
         ]
     },

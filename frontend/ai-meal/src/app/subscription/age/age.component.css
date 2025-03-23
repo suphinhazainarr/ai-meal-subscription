@@ -1,16 +1,28 @@
-
 body {
     background-color: #E0D4C9 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
   }
   
   .container {
     background-color: #e5c3a4 !important;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   }
   
   .age-btn {
     background-color: #e5c3a4 !important;
     border-color: #A89B8C !important;
     color: #5a4a3f !important;
+    transition: background-color 0.3s, color 0.3s;
   }
   
   .age-btn:hover,
@@ -22,8 +34,19 @@ body {
   .submit-btn {
     background-color: #5a4a3f !important;
     color: white !important;
+    transition: background-color 0.3s;
   }
   
   .submit-btn:hover {
     background-color: #483C33 !important;
+  }
+  
+  .input-group {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .form-control {
+    border-color: #A89B8C !important;
   }

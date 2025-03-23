@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Meal Profile Setup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #dacfc5;
+            --secondary: #e0d4c9;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #fff;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        header {
+            background-color: var(--primary);
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        .height-display {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--text-dark);
+        }
+
+        .height-unit {
+            font-size: 24px;
+            margin-left: 5px;
+        }
+
+        .height-selector {
+            width: 100%;
+            max-width: 300px;
+            height: 180px;
+            overflow-y: auto;
+            margin: 20px 0;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            position: relative;
+            scroll-behavior: smooth;
+        }
+
+        .height-selector::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .height-selector::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .height-selector::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .height-options {
+            padding: 70px 0;
+        }
+
+        .height-option {
+            padding: 10px 0;
+            text-align: center;
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .height-option:hover {
+            background-color: rgba(218, 207, 197, 0.3);
+        }
+
+        .height-option.selected {
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--text-dark);
+            background-color: rgba(218, 207, 197, 0.5);
+        }
+
+        .selector-overlay {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 40px;
+            border-top: 2px solid var(--primary);
+            border-bottom: 2px solid var(--primary);
+            pointer-events: none;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .btn-custom {
+            background-color: var(--primary);
+            color: var(--text-dark);
+            border: none;
+            padding: 14px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn-custom:hover {
+            background-color: #c9baa9;
+        }
+
+        .height-control-btn {
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .height-control-btn:hover {
+            background-color: #c9baa9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center">
+            <h1 class="h4">AI-Meal Profile Setup</h1>
+            <p class="subtitle text-muted">Select your height</p>
+        </header>
+        
+        <div class="height-selector-container text-center">
+            <div class="height-display">
+                <span id="selectedHeight">170</span>
+                <span class="height-unit">cm</span>
+            </div>
+            
+            <div class="d-flex justify-content-between align-items-center height-controls mx-auto" style="max-width: 300px;">
+                <button class="height-control-btn" id="decrementBtn">-</button>
+                <button class="height-control-btn" id="incrementBtn">+</button>
+            </div>
+            
+            <div class="height-selector mx-auto" id="heightSelector">
+                <div class="selector-overlay"></div>
+                <div class="height-options" id="heightOptions">
+                    <!-- Height options will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="d-flex justify-content-between navigation mt-3">
+                <button class="btn btn-custom" id="backButton">Back</button>
+                <button class="btn btn-custom" id="nextButton">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heightSelector = document.getElementById('heightSelector');
+            const heightOptions = document.getElementById('heightOptions');
+            const selectedHeightDisplay = document.getElementById('selectedHeight');
+            const incrementBtn = document.getElementById('incrementBtn');
+            const decrementBtn = document.getElementById('decrementBtn');
+            
+            // Generate height options from 100cm to 250cm
+            for (let i = 100; i <= 250; i += 0.5) {
+                const option = document.createElement('div');
+                option.className = 'height-option';
+                option.textContent = i.toFixed(1);
+                option.dataset.height = i.toFixed(1);
+                option.id = height-${i.toFixed(1)};
+                
+                if (i === 170) {
+                    option.classList.add('selected');
+                }
+                
+                heightOptions.appendChild(option);
+            }
+            
+            // Function to update selected height
+            function updateSelectedHeight(height) {
+                const options = document.querySelectorAll('.height-option');
+                options.forEach(opt => opt.classList.remove('selected'));
+                
+                const targetOption = document.getElementById(height-${height});
+                if (targetOption) {
+                    targetOption.classList.add('selected');
+                    selectedHeightDisplay.textContent = height;
+                    
+                    setTimeout(() => {
+                        heightSelector.scrollTop = targetOption.offsetTop - heightSelector.offsetHeight / 2 + targetOption.offsetHeight / 2;
+                    }, 10);
+                }
+            }
+            
+            // Initial scroll position
+            setTimeout(() => {
+                const selectedOption = document.querySelector('.height-option.selected');
+                if (selectedOption) {
+                    heightSelector.scrollTop = selectedOption.offsetTop - heightSelector.offsetHeight / 2 + selectedOption.offsetHeight / 2;
+                }
+            }, 100);
+            
+            // Handling scrolling more reliably
+            let scrollTimeout;
+            heightSelector.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                
+                scrollTimeout = setTimeout(function() {
+                    const selectorRect = heightSelector.getBoundingClientRect();
+                    const selectorCenter = selectorRect.top + selectorRect.height / 2;
+                    
+                    const options = document.querySelectorAll('.height-option');
+                    let closestOption = null;
+                    let minDistance = Infinity;
+                    
+                    options.forEach(option => {
+                        const optionRect = option.getBoundingClientRect();
+                        const optionCenter = optionRect.top + optionRect.height / 2;
+                        const distance = Math.abs(optionCenter - selectorCenter);
+                        
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestOption = option;
+                        }
+                    });
+                    
+                    if (closestOption) {
+                        const height = closestOption.dataset.height;
+                        selectedHeightDisplay.textContent = height;
+                        
+                        options.forEach(opt => opt.classList.remove('selected'));
+                        closestOption.classList.add('selected');
+                        
+                        const targetScrollTop = closestOption.offsetTop - heightSelector.offsetHeight / 2 + closestOption.offsetHeight / 2;
+                        if (Math.abs(heightSelector.scrollTop - targetScrollTop) > 5) {
+                            heightSelector.scrollTop = targetScrollTop;
+                        }
+                    }
+                }, 150);
+            });
+            
+            // Handle click on height option
+            heightOptions.addEventListener('click', function(e) {
+                const clickedOption = e.target.closest('.height-option');
+                if (clickedOption) {
+                    const height = clickedOption.dataset.height;
+                    updateSelectedHeight(height);
+                }
+            });
+            
+            // Increment and decrement buttons
+            incrementBtn.addEventListener('click', function() {
+                const currentHeight = parseFloat(selectedHeightDisplay.textContent);
+                let newHeight = Math.min(250, currentHeight + 0.5).toFixed(1);
+                updateSelectedHeight(newHeight);
+            });
+            
+            decrementBtn.addEventListener('click', function() {
+                const currentHeight = parseFloat(selectedHeightDisplay.textContent);
+                let newHeight = Math.max(100, currentHeight - 0.5).toFixed(1);
+                updateSelectedHeight(newHeight);
+            });
+            
+            // Handle navigation buttons
+            document.getElementById('nextButton').addEventListener('click', function() {
+                alert('Height selected: ' + selectedHeightDisplay.textContent + ' cm');
+            });
+            
+            document.getElementById('backButton').addEventListener('click', function() {
+                alert('Going back to previous step');
+            });
+        });
+    </script>
+</body>
+</html>
