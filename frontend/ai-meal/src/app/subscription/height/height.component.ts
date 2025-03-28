@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-height',
@@ -13,10 +14,11 @@ export class HeightComponent implements OnInit {
   selectedHeight: number = 170;
   heightOptions: number[] = [];
 
-  constructor() {}
+  constructor(private userDataService: UserDataService) {} // Inject the service
 
   ngOnInit(): void {
     this.generateHeightOptions();
+    this.saveHeightData(); // Save initial height
   }
 
   // Generate height options from 100cm to 250cm in increments of 0.5
@@ -30,6 +32,7 @@ export class HeightComponent implements OnInit {
   selectHeight(height: number): void {
     this.selectedHeight = height;
     this.scrollToSelectedHeight();
+    this.saveHeightData(); // Save when height changes
   }
 
   // Increment height
@@ -37,6 +40,7 @@ export class HeightComponent implements OnInit {
     if (this.selectedHeight < 250) {
       this.selectedHeight += 0.5;
       this.scrollToSelectedHeight();
+      this.saveHeightData(); // Save when height changes
     }
   }
 
@@ -45,6 +49,7 @@ export class HeightComponent implements OnInit {
     if (this.selectedHeight > 100) {
       this.selectedHeight -= 0.5;
       this.scrollToSelectedHeight();
+      this.saveHeightData(); // Save when height changes
     }
   }
 
@@ -57,13 +62,14 @@ export class HeightComponent implements OnInit {
     }
   }
 
-  // Handle back button
-  onBack(): void {
-    alert('Going back to previous step');
-  }
-
-  // Handle next button
-  onNext(): void {
-    alert(`Height selected: ${this.selectedHeight} cm`);
+  // Save height data to UserDataService
+  private saveHeightData(): void {
+    this.userDataService.setHeightData({
+      height: this.selectedHeight,
+      unit: 'cm'
+    });
+    
+    // For debugging - can be removed in production
+    console.log('Height saved:', this.selectedHeight);
   }
 }
