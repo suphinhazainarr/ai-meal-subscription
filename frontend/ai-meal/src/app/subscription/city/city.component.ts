@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-city',
@@ -14,14 +15,16 @@ export class CityComponent {
   city: string = '';
   language: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private userDataService: UserDataService) {}
 
-  onSubmit() {
-    // Save preferences (you can add your logic here)
-    console.log('City:', this.city);
-    console.log('Language:', this.language);
-
-    // Navigate to the next step (e.g., weight)
-    // this.router.navigate(['../weight'], { relativeTo: this.router.url });
+  // This will be called whenever any selection changes
+  onSelectionChange() {
+    if (this.city && this.language) {
+      console.log(this.city , this.language)
+      this.userDataService.setPage2Data({
+        city: this.city,
+        language: this.language
+      });
+    }
   }
 }

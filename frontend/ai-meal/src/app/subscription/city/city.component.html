@@ -9,11 +9,11 @@
 
   <!-- Form Section -->
   <h1 class="text-center mb-4">AI-Meal Profile Setup</h1>
-  <form id="preferenceForm" (ngSubmit)="onSubmit()">
+  <form id="preferenceForm" >
     <!-- City Dropdown -->
     <div class="mb-3">
       <label for="city" class="form-label">Where are you from?</label>
-      <select id="city" name="city" class="form-select" required [(ngModel)]="city">
+      <select id="city" name="city" class="form-select" required [(ngModel)]="city" (change)="onSelectionChange()">
         <option value="" disabled selected>Select your city</option>
         <option value="kochi">Kochi</option>
         <option value="mumbai">Mumbai</option>
@@ -33,7 +33,7 @@
     <!-- Language Dropdown -->
     <div class="mb-3">
       <label for="language" class="form-label">Which language do you prefer?</label>
-      <select id="language" name="language" class="form-select" required [(ngModel)]="language">
+      <select id="language" name="language" class="form-select" required [(ngModel)]="language" (change)="onSelectionChange()">
         <option value="" disabled selected>Select your preferred language</option>
         <option value="english">English</option>
         <option value="hindi">Hindi</option>
@@ -48,7 +48,5 @@
       </select>
     </div>
 
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-secondary w-100">Save Preferences</button>
   </form>
 </div>
