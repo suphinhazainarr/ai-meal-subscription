@@ -22,30 +22,41 @@ export class AgeComponent {
   selectAgeRange(ageRange: string) {
     this.selectedAgeRange = ageRange;
     this.customAge = null; // Clear custom age if range is selected
-    this.saveAgeData(ageRange);
+    
+    // Extract numerical value from range
+    const ageValue = this.extractAgeValue(ageRange);
+    this.saveAgeData(ageValue);
   }
 
   // Handle custom age submission
   submitCustomAge() {
     if (this.customAge && this.customAge > 0 && this.customAge <= 120) {
-      this.selectedAgeRange = `Custom: ${this.customAge}`;
-      this.saveAgeData(this.customAge.toString());
+      this.selectedAgeRange = null; // Clear range selection
+      this.saveAgeData(this.customAge);
     }
   }
 
-  // Save data to UserDataService
-  private saveAgeData(ageValue: string) {
+  // Extract numerical value from range
+  private extractAgeValue(ageRange: string): number {
+    if (ageRange === 'Under 12') return 11; // Example value
+    if (ageRange === '75+') return 75; // Example value
+    
+    // For ranges like "12-17", take the midpoint
+    if (ageRange.includes('-')) {
+      const [min, max] = ageRange.split('-').map(Number);
+      return Math.floor((min + max) / 2);
+    }
+    
+    return 0; // Fallback (shouldn't happen)
+  }
+
+  // Save only the numerical age value
+  private saveAgeData(ageValue: number) {
     this.userDataService.setAgeData({
-      ageRange: this.selectedAgeRange,
-      exactAge: this.customAge,
-      ageValue: ageValue
+      age: ageValue
     });
     
-    // For debugging - can be removed in production
-    console.log('Age data saved:', {
-      ageRange: this.selectedAgeRange,
-      exactAge: this.customAge
-    });
+    console.log('Age saved:', ageValue); // Debug log
   }
 
 }
