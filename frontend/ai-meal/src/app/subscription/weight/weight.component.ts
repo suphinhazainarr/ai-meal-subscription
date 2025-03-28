@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-weight',
@@ -12,10 +13,11 @@ export class WeightComponent implements OnInit {
   selectedWeight: number = 70;
   weightOptions: number[] = [];
 
-  constructor() {}
+  constructor(private userDataService: UserDataService) {} // Inject the service
 
   ngOnInit(): void {
     this.generateWeightOptions();
+    this.saveWeightData(); // Save initial weight
   }
 
   // Generate weight options from 30kg to 200kg in increments of 0.5
@@ -29,6 +31,7 @@ export class WeightComponent implements OnInit {
   selectWeight(weight: number): void {
     this.selectedWeight = weight;
     this.scrollToSelectedWeight();
+    this.saveWeightData(); // Save when weight changes
   }
 
   // Increment weight
@@ -36,6 +39,7 @@ export class WeightComponent implements OnInit {
     if (this.selectedWeight < 200) {
       this.selectedWeight += 0.5;
       this.scrollToSelectedWeight();
+      this.saveWeightData(); // Save when weight changes
     }
   }
 
@@ -44,6 +48,7 @@ export class WeightComponent implements OnInit {
     if (this.selectedWeight > 30) {
       this.selectedWeight -= 0.5;
       this.scrollToSelectedWeight();
+      this.saveWeightData(); // Save when weight changes
     }
   }
 
@@ -56,13 +61,14 @@ export class WeightComponent implements OnInit {
     }
   }
 
-  // Handle back button
-  onBack(): void {
-    alert('Going back to previous step');
-  }
-
-  // Handle next button
-  onNext(): void {
-    alert(`Weight selected: ${this.selectedWeight} kg`);
+  // Save weight data to UserDataService
+  private saveWeightData(): void {
+    this.userDataService.setWeightData({
+      weight: this.selectedWeight,
+      unit: 'kg'
+    });
+    
+    // For debugging - can be removed in production
+    console.log('Weight saved:', this.selectedWeight);
   }
 }
