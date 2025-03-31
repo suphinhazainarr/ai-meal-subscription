@@ -101,7 +101,7 @@ class GoalBasedMealPlanner:
             'Athlete': f"High protein ({meal['protein_g']}g), performance-focused"
         }
         return notes.get(goal, "")
-    
+
     def display_plan(self, plan):
         for week, weekly_plan in plan.items():
             print(f"\n{week} Meal Plan")
@@ -113,9 +113,10 @@ class GoalBasedMealPlanner:
                     print(f"    Calories: {details['calories']} | Protein: {details['protein']}g")
                     print(f"    Carbs: {details['carbs']}g | Fats: {details['fats']}g")
                     print(f"    Note: {details['goal_specific_note']}")
-          @staticmethod
+
+    @staticmethod
     def create_and_save_planner(data_path='models/modified_diet_dataset.csv',
-                              save_path='models/meal_planner_full.pkl'):
+                                save_path='models/meal_planner_full.pkl'):
         """Static method to create and save a planner instance"""
         try:
             # Ensure directories exist
