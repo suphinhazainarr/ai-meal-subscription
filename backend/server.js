@@ -12,7 +12,8 @@ app.use(cors());
 // Import routes
 const authRoutes = require("./routes/auth");
 const paymentRoutes = require("./routes/payment"); // Import payment routes
-
+const mealRoutes = require('./routes/mealRoutes');
+app.use('/api', mealRoutes);
 // Use routes
 app.use("/api/auth", authRoutes);
 app.use("/api/payment", paymentRoutes); // Use payment routes

@@ -1,0 +1,180 @@
+height_cm,weight_kg,goal,meal,food_item,calories,protein_g,carbs_g,fat_g
+188,82,Weight Gain,Breakfast,Paneer Paratha with Butter,600,25,70,20
+178,50,Weight Gain,Breakfast,Aloo Paratha with Curd,650,20,75,18
+164,68,Weight Gain,Breakfast,Dosa with Coconut Chutney,500,15,60,10
+157,51,Weight Gain,Breakfast,Ragi Malt,550,18,65,12
+170,93,Weight Gain,Breakfast,Masala Poha with Nuts,580,20,68,15
+188,75,Weight Gain,Breakfast,Upma with Ghee,600,22,70,18
+168,81,Weight Gain,Breakfast,Banana Shake with Almonds,700,25,80,22
+172,55,Weight Gain,Breakfast,Oats Chilla with Paneer,680,28,75,20
+160,81,Weight Gain,Breakfast,Stuffed Moong Dal Dosa,720,30,85,25
+160,53,Weight Gain,Breakfast,Boiled Egg Bhurji with Bread,750,32,80,30
+173,60,Weight Gain,Lunch,Keema Paratha with Curd,900,55,130,40
+185,66,Weight Gain,Lunch,Prawn Masala with Chapati,820,48,110,32
+189,87,Weight Gain,Lunch,Shahi Paneer with Pulao,870,45,110,30
+173,73,Weight Gain,Lunch,Methi Malai Murg with Roti,880,50,120,32
+152,54,Weight Gain,Lunch,Soya Kebab with Rice,850,40,115,30
+171,83,Weight Gain,Lunch,Stuffed Baingan with Rice,800,35,90,25
+151,55,Weight Gain,Lunch,Dal Makhani with Paratha,820,38,100,28
+173,71,Weight Gain,Lunch,Vegetable Pulao with Dal,780,30,95,28
+179,60,Weight Gain,Lunch,Chicken Tikka with Rice,750,60,95,28
+187,97,Weight Gain,Lunch,Lamb Curry with Brown Rice,850,70,110,35
+151,65,Weight Gain,Dinner,Keema Paratha with Curd,900,55,130,40
+170,82,Weight Gain,Dinner,Prawn Masala with Chapati,820,48,110,32
+182,58,Weight Gain,Dinner,Shahi Paneer with Pulao,870,45,110,30
+161,55,Weight Gain,Dinner,Methi Malai Murg with Roti,880,50,120,32
+171,65,Weight Gain,Dinner,Soya Kebab with Rice,850,40,115,30
+174,78,Weight Gain,Dinner,Stuffed Baingan with Rice,800,35,90,25
+176,52,Weight Gain,Dinner,Dal Makhani with Paratha,820,38,100,28
+177,69,Weight Gain,Dinner,Vegetable Pulao with Dal,780,30,95,28
+165,85,Weight Gain,Dinner,Chicken Tikka with Rice,750,60,95,28
+164,68,Weight Gain,Dinner,Lamb Curry with Brown Rice,850,70,110,35
+152,75,Weight Gain,Snack,Peanut Butter Sandwich,400,15,40,20
+186,52,Weight Gain,Snack,Trail Mix (Nuts & Dried Fruits),500,10,50,30
+156,68,Weight Gain,Snack,Protein Shake with Banana,600,40,60,20
+170,69,Weight Gain,Snack,Cheese Toast,450,20,35,25
+158,81,Weight Gain,Snack,Avocado Toast with Egg,500,25,40,30
+188,56,Weight Gain,Snack,Granola Bar with Nuts,350,10,45,15
+167,90,Weight Gain,Snack,Chocolate Milk,300,10,40,10
+153,82,Weight Gain,Snack,Boiled Sweet Potato with Butter,400,5,60,15
+174,89,Weight Gain,Snack,Protein Bar,300,20,30,10
+163,88,Weight Gain,Snack,Boiled Eggs (2),140,12,2,10
+158,67,Weight Gain,Snack,Cottage Cheese with Fruits,200,20,15,8
+175,89,Weight Gain,Snack,Peanut Butter & Banana Sandwich,350,15,40,15
+151,50,Weight Loss,Breakfast,Poha with Peanuts,250,8,40,6
+169,60,Weight Loss,Breakfast,Idli with Sambar,200,6,38,2
+177,77,Weight Loss,Breakfast,Upma with Vegetables,220,7,35,5
+156,74,Weight Loss,Breakfast,Oats Dosa with Chutney,230,9,42,3
+157,99,Weight Loss,Breakfast,Moong Dal Chilla,180,12,28,4
+184,72,Weight Loss,Breakfast,Besan Chilla with Curd,200,15,30,6
+163,80,Weight Loss,Breakfast,Ragi Porridge,240,10,40,5
+166,79,Weight Loss,Breakfast,Dhokla with Green Chutney,210,8,35,3
+185,91,Weight Loss,Breakfast,Sprouts Chaat,200,14,25,2
+189,84,Weight Loss,Breakfast,Masala Oats,220,10,38,6
+153,56,Weight Loss,Breakfast,Methi Thepla with Curd,250,12,40,8
+151,65,Weight Loss,Breakfast,Vegetable Dalia,260,14,42,7
+155,75,Weight Loss,Breakfast,Chia Seed Pudding,200,10,35,8
+153,97,Weight Loss,Breakfast,Pesarattu with Chutney,280,14,45,7
+178,98,Weight Loss,Breakfast,Bhutta (Boiled Corn),180,5,35,2
+167,51,Weight Loss,Breakfast,Greek Yogurt with Nuts,220,18,30,5
+175,50,Weight Loss,Breakfast,Chickpea Salad,210,12,30,6
+183,97,Weight Loss,Breakfast,Fruit Salad with Nuts,250,8,45,5
+159,61,Weight Loss,Breakfast,Vegetable Idiyappam,240,10,42,4
+185,54,Weight Loss,Lunch,Quinoa Salad with Veggies,300,12,45,8
+163,86,Weight Loss,Lunch,Grilled Chicken with Steamed Veggies,350,30,20,10
+180,81,Weight Loss,Lunch,Lentil Soup with Brown Rice,320,15,50,6
+164,58,Weight Loss,Lunch,Tofu Stir Fry with Quinoa,330,20,40,8
+157,90,Weight Loss,Lunch,Spinach Dal with Roti,350,20,45,8
+163,84,Weight Loss,Lunch,Bottle Gourd Sabzi with Rice,370,18,50,7
+172,68,Weight Loss,Lunch,Baingan Bharta with Chapati,360,15,52,6
+189,97,Weight Loss,Lunch,Chickpea Salad,340,22,48,7
+170,65,Weight Loss,Lunch,Paneer Bhurji with Roti,370,25,45,9
+165,52,Weight Loss,Lunch,Mixed Sprouts Curry with Roti,340,22,55,7
+167,69,Weight Loss,Dinner,Vegetable Dalia,330,14,52,6
+173,73,Weight Loss,Dinner,Moong Dal Soup,310,16,50,4
+175,82,Weight Loss,Dinner,Spinach Dal with Roti,350,20,45,8
+174,73,Weight Loss,Dinner,Bottle Gourd Sabzi with Rice,370,18,50,7
+178,60,Weight Loss,Dinner,Baingan Bharta with Chapati,360,15,52,6
+164,98,Weight Loss,Dinner,Chickpea Salad,340,22,48,7
+150,57,Weight Loss,Dinner,Paneer Bhurji with Roti,370,25,45,9
+174,85,Weight Loss,Dinner,Mixed Sprouts Curry with Roti,340,22,55,7
+156,87,Weight Loss,Dinner,Mushroom Masala with Roti,360,20,48,9
+158,89,Weight Loss,Dinner,Palak Dal with Brown Rice,350,18,50,8
+173,69,Weight Loss,Snack,Roasted Chana,150,10,20,3
+150,84,Weight Loss,Snack,Cucumber Sticks with Hummus,120,5,15,4
+157,97,Weight Loss,Snack,Boiled Egg,70,6,1,5
+173,74,Weight Loss,Snack,Apple Slices with Peanut Butter,180,5,20,8
+160,84,Weight Loss,Snack,Greek Yogurt with Berries,150,10,15,5
+166,74,Weight Loss,Snack,Mixed Nuts (Handful),200,6,10,15
+157,78,Weight Loss,Snack,Carrot Sticks with Guacamole,130,3,12,7
+184,67,Weight Loss,Snack,Boiled Moong Dal,120,8,20,1
+184,95,Weight Loss,Snack,Yogurt with Flaxseeds,150,10,12,8
+182,67,Weight Loss,Snack,Steamed Edamame,130,11,10,5
+154,51,Balanced Diet,Breakfast,Vegetable Omelette with Whole Wheat Toast,350,18,40,12
+188,84,Balanced Diet,Breakfast,Multigrain Paratha with Curd,380,12,50,14
+177,65,Balanced Diet,Breakfast,Idli with Sambar,320,8,60,4
+156,90,Balanced Diet,Breakfast,Paneer Bhurji with Brown Bread,370,22,45,10
+158,85,Balanced Diet,Breakfast,Peanut Butter Banana Smoothie,400,15,50,15
+157,82,Balanced Diet,Breakfast,Oats with Almonds and Honey,350,12,55,10
+161,53,Balanced Diet,Breakfast,Chia Pudding with Berries,300,10,40,12
+183,82,Balanced Diet,Breakfast,Poha with Peanuts,320,9,45,8
+182,63,Balanced Diet,Breakfast,Ragi Porridge with Jaggery,330,10,55,7
+172,70,Balanced Diet,Breakfast,Moong Dal Chilla with Green Chutney,340,16,40,9
+173,97,Balanced Diet,Breakfast,Dhokla with Mint Chutney,280,8,50,6
+186,69,Balanced Diet,Breakfast,Vegetable Upma,300,10,48,7
+184,57,Balanced Diet,Breakfast,Methi Thepla with Yogurt,350,12,50,9
+189,56,Balanced Diet,Breakfast,Greek Yogurt with Nuts and Seeds,320,18,30,14
+171,52,Balanced Diet,Breakfast,Almond Butter Toast with Banana,370,10,50,12
+176,66,Balanced Diet,Lunch,Grilled Chicken with Brown Rice and Veggies,500,35,55,12
+184,82,Balanced Diet,Lunch,Paneer Tikka with Whole Wheat Roti,480,28,50,14
+150,97,Balanced Diet,Lunch,Dal Tadka with Jeera Rice,450,18,65,10
+184,61,Balanced Diet,Lunch,Palak Paneer with Roti,470,25,50,15
+186,71,Balanced Diet,Lunch,Chickpea Curry with Brown Rice,460,22,60,12
+163,71,Balanced Diet,Lunch,Vegetable Biryani with Raita,490,12,70,15
+152,95,Balanced Diet,Lunch,Tofu Stir Fry with Quinoa,440,20,55,12
+150,79,Balanced Diet,Lunch,Baingan Bharta with Chapati,430,15,60,9
+154,87,Balanced Diet,Lunch,Rajma Curry with Rice,480,22,65,10
+175,87,Balanced Diet,Lunch,Mixed Vegetable Sabzi with Roti,450,14,60,8
+163,94,Balanced Diet,Dinner,Grilled Fish with Quinoa Salad,500,40,50,12
+188,57,Balanced Diet,Dinner,Mushroom Masala with Roti,460,18,55,10
+176,76,Balanced Diet,Dinner,Chole Masala with Paratha,480,20,65,14
+158,76,Balanced Diet,Dinner,Lauki Dal with Brown Rice,470,16,60,10
+164,83,Balanced Diet,Dinner,Palak Dal with Roti,460,15,58,9
+164,70,Balanced Diet,Dinner,Vegetable Stew with Rice,480,12,70,8
+175,79,Balanced Diet,Dinner,Masoor Dal with Whole Wheat Roti,450,18,55,7
+162,82,Balanced Diet,Dinner,Bhindi Sabzi with Jeera Rice,470,12,65,9
+181,77,Balanced Diet,Dinner,Vegetable Khichdi,440,14,65,8
+188,96,Balanced Diet,Dinner,Tofu Bhurji with Chapati,450,20,50,10
+181,82,Balanced Diet,Snack,Handful of Almonds and Walnuts,200,8,10,16
+153,54,Balanced Diet,Snack,Greek Yogurt with Berries,180,12,18,5
+179,97,Balanced Diet,Snack,Peanut Butter on Whole Wheat Toast,250,10,30,12
+186,68,Balanced Diet,Snack,Hummus with Carrot and Cucumber Sticks,190,8,20,10
+172,53,Balanced Diet,Snack,Roasted Chana with Nuts,220,12,18,14
+188,84,Balanced Diet,Snack,Boiled Eggs with Salt and Pepper,140,12,2,8
+164,98,Balanced Diet,Snack,Fruit Salad with Yogurt,200,6,35,5
+178,66,Balanced Diet,Snack,Makhana (Fox Nuts) Roasted,160,4,30,6
+185,93,Balanced Diet,Snack,Paneer Tikka,230,20,5,12
+162,77,Balanced Diet,Snack,Chia Seeds with Almond Milk,190,8,18,10
+181,79,Balanced Diet,Snack,Homemade Protein Bar,250,15,30,12
+156,78,Athlete,Breakfast,Oats with Banana and Peanut Butter,450,20,60,15
+171,95,Athlete,Breakfast,Paneer Paratha with Curd,500,25,65,18
+177,55,Athlete,Breakfast,Masala Oats with Boiled Egg,420,22,50,14
+151,84,Athlete,Breakfast,Multigrain Toast with Scrambled Eggs,470,28,45,16
+155,90,Athlete,Breakfast,Idli with Peanut Chutney,380,12,65,10
+177,86,Athlete,Breakfast,Poha with Sprouts and Nuts,390,15,55,12
+177,73,Athlete,Breakfast,Dosa with Egg Bhurji,430,20,60,14
+169,78,Athlete,Breakfast,Ragi Malt with Almonds and Jaggery,400,14,70,8
+179,98,Athlete,Breakfast,Whole Wheat Pancakes with Honey,450,12,75,10
+160,95,Athlete,Breakfast,Chia Pudding with Dates and Nuts,420,15,65,12
+177,80,Athlete,Breakfast,Methi Thepla with Peanut Chutney,460,18,70,14
+174,84,Athlete,Breakfast,Vegetable Upma with Paneer,440,20,65,12
+188,82,Athlete,Breakfast,Chickpea Salad with Boiled Eggs,430,22,55,14
+182,70,Athlete,Breakfast,Sprouts Chaat with Roasted Peanuts,410,18,50,10
+150,81,Athlete,Lunch,Grilled Chicken with Brown Rice and Steamed Vegetables,600,50,60,12
+176,72,Athlete,Lunch,Paneer Bhurji with Whole Wheat Chapati,580,35,70,16
+162,82,Athlete,Lunch,Lentil Dal with Quinoa and Ghee,550,22,75,14
+152,52,Athlete,Lunch,Rajma Chawal with Ghee,590,25,80,12
+188,67,Athlete,Lunch,Grilled Fish with Sweet Potato Mash,570,45,55,14
+155,74,Athlete,Lunch,Chole with Rice and Salad,580,28,80,10
+157,91,Athlete,Lunch,Soya Chunk Curry with Brown Rice,600,50,75,12
+176,80,Athlete,Lunch,Vegetable Biryani with Paneer,620,30,85,15
+158,52,Athlete,Lunch,Quinoa Salad with Chicken and Nuts,610,40,60,18
+186,89,Athlete,Lunch,Mixed Sprouts Khichdi with Yogurt,580,28,80,10
+182,95,Athlete,Dinner,Grilled Salmon with Quinoa,620,50,55,18
+173,73,Athlete,Dinner,Tofu Stir Fry with Whole Wheat Noodles,600,35,75,14
+164,99,Athlete,Dinner,Masoor Dal with Jeera Rice,580,22,80,12
+181,81,Athlete,Dinner,Baingan Bharta with Roti and Yogurt,570,20,75,10
+181,96,Athlete,Dinner,Chicken Tikka with Brown Rice,610,50,60,15
+173,71,Athlete,Dinner,Palak Paneer with Roti,590,30,65,14
+161,72,Athlete,Dinner,Vegetable Dalia with Nuts,600,22,85,10
+188,51,Athlete,Dinner,Mushroom Masala with Quinoa,580,25,70,12
+151,76,Athlete,Dinner,Soya Granules with Whole Wheat Chapati,600,45,70,12
+152,91,Athlete,Dinner,Boiled Sweet Potato with Paneer Tikka,590,28,80,14
+186,51,Athlete,Snack,Boiled Eggs with Cheese,250,20,5,18
+166,75,Athlete,Snack,Peanut Butter on Whole Wheat Toast,300,15,35,12
+151,66,Athlete,Snack,Greek Yogurt with Almonds and Honey,280,18,20,10
+151,89,Athlete,Snack,Roasted Chana with Jaggery,260,15,30,8
+177,82,Athlete,Snack,Steamed Edamame with Salt,270,22,25,8
+172,58,Athlete,Snack,Chia Seed Pudding with Almond Milk,290,12,30,14
+186,92,Athlete,Snack,Paneer Cubes with Chutney,310,25,10,18
+181,97,Athlete,Snack,Fruit Salad with Yogurt and Chia Seeds,280,10,45,6
