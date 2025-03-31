@@ -2,14 +2,34 @@ const axios = require('axios');
 
 exports.generateMealPlan = async (req, res) => {
   try {
-    const response = await axios.post('http://localhost:5000/generate-meal-plan', {
+    // Verify the request body
+    if (!req.body || !req.body.goal) {
+      return res.status(400).json({
+        success: false,
+        error: 'Goal parameter is required'
+      });
+    }
+
+    const response = await axios.post('http://localhost:5001/generate-meal-plan', {
       goal: req.body.goal
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+
     res.json(response.data);
   } catch (error) {
-    res.status(500).json({ 
+    console.error('Meal service error details:', {
+      message: error.message,
+      response: error.response?.data,
+      status: error.response?.status
+    });
+    
+    res.status(error.response?.status || 500).json({
       success: false,
-      error: 'Meal planning service unavailable'
+      error: error.response?.data?.error || 'Meal planning service unavailable',
+      details: error.response?.data || error.message
     });
   }
 };
