@@ -1,1 +1,38 @@
-<p>subscription-home works!</p>
+<!-- src/app/components/meal-planner/meal-planner.component.html -->
+<div class="container">
+    <h2>Meal Plan Generator</h2>
+    
+    <div class="goal-selector">
+      <label for="goal">Select your goal:</label>
+      <select id="goal" [(ngModel)]="selectedGoal">
+        <option *ngFor="let goal of goals" [value]="goal">{{goal}}</option>
+      </select>
+      <button (click)="generatePlan()" [disabled]="isLoading">
+        {{ isLoading ? 'Generating...' : 'Generate Plan' }}
+      </button>
+    </div>
+  
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+  
+    <div *ngIf="mealPlan" class="meal-plan">
+      <div *ngFor="let week of getWeeks()" class="week">
+        <h3>{{ week }}</h3>
+        <div *ngFor="let day of getDays()" class="day">
+          <h4>{{ day }}</h4>
+          <div *ngFor="let meal of getMeals()" class="meal">
+            <h5>{{ meal }}:</h5>
+            <div *ngIf="mealPlan[week][day][meal] as mealDetails">
+              <p><strong>{{ mealDetails.food_item }}</strong></p>
+              <p>Calories: {{ mealDetails.calories }}</p>
+              <p>Protein: {{ mealDetails.protein }}g</p>
+              <p>Carbs: {{ mealDetails.carbs }}g</p>
+              <p>Fats: {{ mealDetails.fats }}g</p>
+              <p class="note">{{ mealDetails.goal_specific_note }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
