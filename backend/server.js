@@ -22,6 +22,8 @@ app.use('/api', mealRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/payment", paymentRoutes); // Use payment routes
 
+const userDetails = require('./routes/userPersonalDetails')
+app.use("/api/user", userDetails);
 
 // Connect to MongoDB
 mongoose

@@ -17,6 +17,6 @@ export class Page1Component {
   selectGoal(goal: string) {
     this.userDataService.setGoal(goal);
     console.log('Selected goal:', goal);
-    this.router.navigate(['/page2']); // Navigate to next page
+    this.router.navigate(['/subscription/page2']); // Navigate to next page
   }
 }

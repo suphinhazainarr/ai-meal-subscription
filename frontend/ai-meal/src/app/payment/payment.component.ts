@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PaymentService } from '../services/payment.service';
 import { Router } from '@angular/router';
+import { UserDataService } from '../services/user-data.service';
 declare var Razorpay: any; // Declare Razorpay to avoid TypeScript errors
 
 @Component({
@@ -14,7 +15,8 @@ export class PaymentComponent {
   amount = 189900; // Amount in paise (1899 INR)
 
   constructor(private paymentService: PaymentService,  private router: Router // Inject Router
-  ) {}
+  ,    private userDataService: UserDataService, // Inject UserDataService
+) {}
 
   proceedToPayment() {
     const userData = JSON.parse(localStorage.getItem('user') || '{}'); // Retrieve user data from localStorage
@@ -62,7 +64,8 @@ export class PaymentComponent {
 
   verifyPayment(response: any) {
     const userData = JSON.parse(localStorage.getItem('user') || '{}'); // Retrieve user data from localStorage
-  
+    const userInfo = this.userDataService.getAllData(); // Get stored user data from UserDataService
+
     if (!userData.email || !userData.name) {
       alert('User details not found!');
       return;
@@ -80,13 +83,44 @@ export class PaymentComponent {
       (result: any) => {
         if (result.success) {
           alert('Payment verified successfully! Subscription activated.');
+          
+          // **Save user data to the database**
+          const userPersonalDetails = {
+            user: userData.email,
+            name: userData.name,
+            age: userInfo.age?.age || userInfo.age, // Handle both cases
+            weight: {
+              value: userInfo.weight?.weight || userInfo.weight,
+              unit: userInfo.weight?.unit || 'kg'
+            },
+            height: {
+              value: userInfo.height?.height || userInfo.height,
+              unit: userInfo.height?.unit || 'cm'
+            },
+            goal: userInfo.goal,
+            sex: userInfo.sex?.sex || userInfo.sex,
+            city: userInfo.city,
+            language: userInfo.language,
+            healthInfo: userInfo.healthInfo || { conditions: [], otherConditions: '' },
+            foodAllergies: userInfo.foodAllergies || { allergies: [], otherAllergies: '' }
+          };
+
+          
+          this.userDataService.saveUserDetails(userPersonalDetails).subscribe(
+            (response) => {
+              console.log('User personal details saved:', response);
+            },
+            (error) => {
+              console.error('Error saving user personal details:', error);
+            }
+          );
+
           this.router.navigate(['/subscription-home']).then(() => {
             window.location.reload(); // Reload the page
           });
         } else {
           alert('Payment verification failed.');
-          this.router.navigate(['/subscription-home']); // Update with your actual route
-
+          this.router.navigate(['/subscription-home']);
         }
       },
       (error: any) => {

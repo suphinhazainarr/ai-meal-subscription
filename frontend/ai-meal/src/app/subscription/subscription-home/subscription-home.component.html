@@ -1,38 +1,91 @@
-<!-- src/app/components/meal-planner/meal-planner.component.html -->
 <div class="container">
-    <h2>Meal Plan Generator</h2>
+  <mat-card class="header-card">
+    <mat-card-header>
+      <mat-card-title>Personalized Meal Plan</mat-card-title>
+      <mat-card-subtitle>Tailored to your health goals</mat-card-subtitle>
+    </mat-card-header>
     
-    <div class="goal-selector">
-      <label for="goal">Select your goal:</label>
-      <select id="goal" [(ngModel)]="selectedGoal">
-        <option *ngFor="let goal of goals" [value]="goal">{{goal}}</option>
-      </select>
-      <button (click)="generatePlan()" [disabled]="isLoading">
-        {{ isLoading ? 'Generating...' : 'Generate Plan' }}
-      </button>
-    </div>
-  
-    <div *ngIf="error" class="error-message">
-      {{ error }}
-    </div>
-  
-    <div *ngIf="mealPlan" class="meal-plan">
-      <div *ngFor="let week of getWeeks()" class="week">
-        <h3>{{ week }}</h3>
-        <div *ngFor="let day of getDays()" class="day">
-          <h4>{{ day }}</h4>
-          <div *ngFor="let meal of getMeals()" class="meal">
-            <h5>{{ meal }}:</h5>
-            <div *ngIf="mealPlan[week][day][meal] as mealDetails">
-              <p><strong>{{ mealDetails.food_item }}</strong></p>
-              <p>Calories: {{ mealDetails.calories }}</p>
-              <p>Protein: {{ mealDetails.protein }}g</p>
-              <p>Carbs: {{ mealDetails.carbs }}g</p>
-              <p>Fats: {{ mealDetails.fats }}g</p>
-              <p class="note">{{ mealDetails.goal_specific_note }}</p>
-            </div>
+    <mat-card-content class="controls">
+      <div class="goal-selector">
+        <mat-form-field appearance="fill">
+          <mat-label>Select your goal</mat-label>
+          <mat-select [(ngModel)]="selectedGoal">
+            <mat-option *ngFor="let goal of goals" [value]="goal">
+              {{goal}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" 
+                (click)="generatePlan()" 
+                [disabled]="isLoading">
+          <span *ngIf="!isLoading">Generate Plan</span>
+          <span *ngIf="isLoading">Generating...</span>
+          <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div *ngIf="error" class="error-message mat-elevation-z1">
+    <mat-icon>error_outline</mat-icon>
+    {{ error }}
+  </div>
+
+  <div *ngIf="mealPlan && currentWeek" class="meal-plan-container">
+    <mat-card class="week-card mat-elevation-z4">
+      <mat-card-header>
+        <mat-card-title>{{ currentWeek }}</mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div *ngFor="let day of getDays()" class="day-container">
+          <h3 class="day-header">{{ day }}</h3>
+          
+          <div class="meals-grid">
+            <mat-card *ngFor="let meal of getMeals()" class="meal-card mat-elevation-z2">
+              <mat-card-header>
+                <mat-card-title>{{ meal }}</mat-card-title>
+              </mat-card-header>
+              
+              <mat-card-content *ngIf="mealPlan[currentWeek][day][meal] as mealDetails">
+                <div class="meal-details">
+                  <h4>{{ mealDetails.food_item }}</h4>
+                  <div class="nutrition-facts">
+                    <div class="nutrition-item">
+                      <mat-icon>local_fire_department</mat-icon>
+                      <span>{{ mealDetails.calories }} kcal</span>
+                    </div>
+                    <div class="nutrition-item">
+                      <mat-icon>fitness_center</mat-icon>
+                      <span>{{ mealDetails.protein }}g protein</span>
+                    </div>
+                    <div class="nutrition-item">
+                      <mat-icon>bakery_dining</mat-icon>
+                      <span>{{ mealDetails.carbs }}g carbs</span>
+                    </div>
+                    <div class="nutrition-item">
+                      <mat-icon>oil_barrel</mat-icon>
+                      <span>{{ mealDetails.fats }}g fats</span>
+                    </div>
+                  </div>
+                  <p class="goal-note">
+                    <mat-icon>lightbulb</mat-icon>
+                    {{ mealDetails.goal_specific_note }}
+                  </p>
+                </div>
+              </mat-card-content>
+            </mat-card>
           </div>
         </div>
-      </div>
-    </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-paginator [length]="weeks.length" 
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="onPageChange($event)"
+                   aria-label="Select week">
+    </mat-paginator>
   </div>
+</div>

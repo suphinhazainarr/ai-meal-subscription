@@ -1,21 +1,26 @@
 <div class="subscription-container">
-    <div class="subscription-content">
-      <!-- Child components will be rendered here -->
-      <router-outlet></router-outlet>
-  
-      <!-- Navigation buttons with arrow keys and pagination dots -->
-      <div class="navigation-buttons">
-        <button *ngIf="showBackButton()" (click)="navigateBack()" class="btn btn-back">&#8592;</button>
-        
-        <!-- Pagination dots -->
-        <div class="pagination-dots">
-          <span *ngFor="let route of routeOrder; let i = index" 
-                [class.active]="i === currentRouteIndex" 
-                class="dot">
-          </span>
-        </div>
-  
-        <button *ngIf="showNextButton()" (click)="navigateNext()" class="btn btn-next">&#8594;</button>
+  <div class="subscription-content">
+    <router-outlet></router-outlet>
+
+    <div class="navigation-buttons">
+      <button *ngIf="showBackButton()" (click)="navigateBack()" class="btn btn-back">
+        &#8592;
+      </button>
+
+      <div class="pagination-dots">
+        <span *ngFor="let route of routeOrder; let i = index" 
+              [class.active]="i === currentRouteIndex" 
+              class="dot">
+        </span>
       </div>
+
+      <button *ngIf="showNextButton()" (click)="navigateNext()" class="btn btn-next">
+        &#8594;
+      </button>
+
+      <button *ngIf="showPaymentButton()" (click)="navigateNext()" class="btn btn-payment">
+        Payment
+      </button>
     </div>
   </div>
+</div>

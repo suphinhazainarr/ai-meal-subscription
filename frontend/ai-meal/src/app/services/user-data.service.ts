@@ -1,9 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserDataService {
+
+
+  private apiUrl = 'http://localhost:5000/api/user'; // Change this to your backend URL
+
+  constructor(private http: HttpClient) {}
 
   private userInformation: any = {};
   setGoal(goal: string) {
@@ -12,6 +18,10 @@ export class UserDataService {
 
   getGoal() {
     return this.userInformation.goal;
+  }
+
+  saveUserDetails(userDetails: any) {
+    return this.http.post(`${this.apiUrl}/save-user-details`, userDetails);
   }
 
   // Store data for each component

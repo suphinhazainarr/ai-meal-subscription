@@ -9,21 +9,20 @@ import { Router, ActivatedRoute, RouterOutlet } from '@angular/router';
   styleUrls: ['./subscription.component.css'],
 })
 export class SubscriptionComponent {
-  // Define the order of child routes
-  public  routeOrder = ['page2', 'age', 'weight', 'height','sex','health-info','food-alergies'];
-  public  currentRouteIndex = 0;
+  public routeOrder = ['page2', 'age', 'weight', 'height', 'sex', 'health-info', 'food-alergies'];
+  public currentRouteIndex = 0;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
-  // Navigate to the next child route
   navigateNext() {
     if (this.currentRouteIndex < this.routeOrder.length - 1) {
       this.currentRouteIndex++;
       this.router.navigate([this.routeOrder[this.currentRouteIndex]], { relativeTo: this.route });
+    } else {
+      this.router.navigate(['/payment']);
     }
   }
 
-  // Navigate to the previous child route
   navigateBack() {
     if (this.currentRouteIndex > 0) {
       this.currentRouteIndex--;
@@ -31,13 +30,15 @@ export class SubscriptionComponent {
     }
   }
 
-  // Show the "Back" button if not on the first route
   showBackButton(): boolean {
     return this.currentRouteIndex > 0;
   }
 
-  // Show the "Next" button if not on the last route
   showNextButton(): boolean {
     return this.currentRouteIndex < this.routeOrder.length - 1;
+  }
+
+  showPaymentButton(): boolean {
+    return this.currentRouteIndex === this.routeOrder.length - 1;
   }
 }
