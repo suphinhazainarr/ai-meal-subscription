@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   subscription: { type: Boolean, default: false }, // Add subscription field
+  role: { type: String, enum: ["user", "admin"], default: "user" }, // Add role
 
 });
 
