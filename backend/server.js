@@ -10,7 +10,9 @@ app.use(express.json());
 app.use(cors({
   origin: 'http://localhost:4200', // Your Angular dev server
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
+  allowedHeaders: ['Content-Type'],
+  credentials: true // REQUIRED for withCredentials
+
 }));
 
 // Import routes
